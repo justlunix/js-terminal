@@ -1,0 +1,107 @@
+@font-face {
+    font-family: "Cascadia Code";
+    src: url("Cascadia.ttf") format("truetype");
+}
+
+body {
+    background: #19202b;
+    margin: 0;
+    color: #efefef;
+    font-family: "Cascadia Code", Arial, Helvetica, sans-serif;
+    font-size: .8rem;
+    line-height: 1rem;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+    margin: 0 15%;
+}
+
+#terminal {
+    height: 58vh;
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0c0f14;
+    border-radius: 6px;
+}
+
+#terminal>#header {
+    padding: 10px;
+    background: #090b0f;
+    border-radius: 3px;
+}
+
+#terminal>#header>.buttons {
+    display: inline-flex;
+}
+
+#terminal>#header>.buttons>div {
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    margin-right: 8px;
+}
+
+#terminal>#header>.buttons>div:last-child {
+    margin-right: 0;
+}
+
+.btn.close {
+    background: #FF6058;
+}
+
+.btn.hide {
+    background: #FFBD2D;
+}
+
+.btn.max {
+    background: #28CA41;
+}
+
+#terminal>#content {
+    margin: 10px;
+    word-break: break-all;
+    height: calc(100% - 52px);
+    overflow-y: auto;
+}
+
+#terminal>#content>.line {
+    width: 100%;
+    min-height: 1rem;
+}
+
+#input {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 3px;
+}
+
+#content .prefix-icon {
+    color: greenyellow;
+    margin-right: 4px;
+}
+
+#input-content>#cursor {
+    border-bottom: 3px solid #efefef;
+    position: absolute;
+    width: 7px;
+    bottom: -2px;
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+}
+
+.fas, #input-content>#cursor {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.2rem;
+}
